@@ -1,43 +1,50 @@
 package projetogerenciadeprojeto;
 
 public class Contas {
-    private int id;
-    private String proprietario;
-    private float credito;
+    private int codigo;
+    private String titular;
+    private double saldo;
 
-    
     public Contas() {
     }
+
+    public Contas(int codigo, String titular, double saldo) {
+        this.codigo = codigo;
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
     
-    public Contas(int id, String proprietario, float credito) {
-        this.id = id;
-        this.proprietario = proprietario;
-        this.credito = credito;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getProprietario() {
-        return proprietario;
-    }
-
-    public void setProprietario(String proprietario) {
-        this.proprietario = proprietario;
-    }
-
-    public float getCredito() {
-        return credito;
-    }
-
-    public void setCredito(float credito) {
-        this.credito = credito;
+    public void Historico(){
+        
     }
     
+    public void ConsultaSaldo(){
+        System.out.println("Saldo disponivel na conta: R$"+getSaldo());
+    }
+   
     
 }
