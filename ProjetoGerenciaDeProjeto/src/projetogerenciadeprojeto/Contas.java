@@ -1,9 +1,12 @@
 package projetogerenciadeprojeto;
+import java.time.LocalDate;
+
 
 public class Contas {
     private int codigo;
     private String titular;
     private double saldo;
+    public Historico historico = new Historico();
 
     public Contas() {
     }
@@ -33,17 +36,18 @@ public class Contas {
     public double getSaldo() {
         return saldo;
     }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    
+    public void AtualizarSaldo(float saldo){
+        this.saldo = getSaldo()+saldo;
+        this.historico.setValor(saldo);
     }
     
-    public void Historico(){
+    public void AtualizaData(LocalDate date){
+        this.historico.setData(date);
+    }
         
-    }
-    
     public void ConsultaSaldo(){
-        System.out.println("Saldo disponivel na conta: R$"+getSaldo());
+        System.out.println("Saldo do "+ this.titular + " disponivel na conta: R$"+getSaldo());
     }
    
     
